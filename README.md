@@ -13,11 +13,6 @@ intermediate trajectory alignment, the student model learns to navigate the solu
 space from the earliest stages of training, leading to better image generation quality
 than the baseline distillation frameworks.
 
-The results of our experiments are shown below 
-
-
-
-<img width="618" height="499" alt="image" src="https://github.com/user-attachments/assets/c7b274e9-3994-4402-875c-79e21c8fbb08" />
 
 
 In our framework, if the teacher model T performs N steps
@@ -35,3 +30,13 @@ tween each student branch prediction and its corresponding
 teacher state.We use MSE loss. This has the effect of essen-
 tially absorbing knowledge from all the timesteps used to
 denoise , instead of just mapping the concerned outputs.
+
+
+<img width="861" height="587" alt="Screenshot 2026-10-02 at 5 13 38 PM" src="https://github.com/user-attachments/assets/6a9344aa-eb4a-48c8-be4b-78744cb7bcab" />
+
+
+The results of our experiments are shown below 
+<img width="618" height="499" alt="image" src="https://github.com/user-attachments/assets/c7b274e9-3994-4402-875c-79e21c8fbb08" />
+
+
+
