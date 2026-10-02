@@ -1,20 +1,17 @@
- The significant computational cost of the iterative sampling
-process in diffusion models hinders their practical applica-
-tion. Progressive Distillation accelerates this process but dis-
-cards valuable information from the teacher model’s interme-
-diate steps, leading to knowledge loss. To mitigate this issue,
-we propose a novel framework,
-BranchDistillation, where the student model is trained using
-branches that simultaneously map to the entire sequence of
-the teacher’s designated timesteps. By capturing the com-
-plete denoising trajectory, our method ensures comprehen-
-sive knowledge transfer. Experimental results demonstrate
-that BranchDistillation achieves superior performance com-
-pared to Progressive Distillation while maintaining com-
-parable computational efficiency. Our findings suggest that
-BranchDistillation offers a more effective approach to knowl-
-edge distillation, significantly reducing sampling time in dif-
-fusion models
+Inspired by non-equilibrium thermodynamics, diffusion models have achieved stateof-the-art performance in generative modeling. However, their iterative sampling
+nature results in high inference latency, which is typically required to maintain
+image quality. While recent efforts in distillation techniques have improved sample
+quality with fewer steps, they discard intermediate trajectory steps. By discarding
+intermediate trajectory steps, these methods lose structural information, resulting
+in significant discretization errors. To mitigate this issue, we propose a novel
+framework, B-DENSE, that leverages multi-branch trajectory alignment. We train
+the student model using branches that simultaneously map to the entire sequence
+of the teacher’s target timesteps. We modify the student architecture to output
+K−fold expanded channels. Each channel subset corresponds to a specific branch
+representing a discrete intermediate step in the teacher’s trajectory. By enforcing
+intermediate trajectory alignment, the student model learns to navigate the solution
+space from the earliest stages of training, leading to better image generation quality
+than the baseline distillation frameworks.
 
 The results of our experiments are shown below 
 
